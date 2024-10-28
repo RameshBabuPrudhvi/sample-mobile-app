@@ -24,7 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-     
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
       # Runs a single command using the runner shell
       - name: Run gradle test
         run: ./gradlew test
